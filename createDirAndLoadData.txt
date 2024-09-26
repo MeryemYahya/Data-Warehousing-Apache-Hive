@@ -1,0 +1,15 @@
+ --create directories in hdfs
+hadoop fs -mkdir /user/hdfs
+hadoop fs -mkdir /user/hdfs/data/sales
+hadoop fs -mkdir /user/hdfs/data/clients
+hadoop fs -mkdir /user/hdfs/data/zipcode
+hadoop fs -ls /user/hdfs/data
+
+
+
+--load data to created directories 
+hadoop fs -put /home/training/Documents/data/raw/raw/* /user/hdfs/data/sales
+hadoop fs -ls /user/hdfs/data/sales
+hadoop fs -put /home/training/Documents/data/clients.csv  /user/hdfs/data/clients
+hadoop fs -put /home/training/Documents/data/zip_code_database.csv  /user/hdfs/data/zipcode
+hadoop fs -put /home/training/Documents/csv-serde-1.1.2-0.11.0-all.jar /user/hdfs
